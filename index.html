@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Only Connect Team Name Generator</title>
+        <style type="text/css">
+			body{
+				text-align: center;
+				background-color: #F4D6AE;
+			}
+		</style>
+    </head>
+    <body>
+        <p>I trained a neural network on all teams to have ever competed in <i>Only Connect</i>, and it came up with name:</p>
+        <h1 id="team_name"></h1>
+        <p><a href="#" id="again">Give me another!</a></p>
+    </body>
+    <script>
+        function sample(arr) {
+            return arr[Math.floor(Math.random()*arr.length)]
+        }
+
+        function make_name() {
+
+            var adjectives = [
+                "New", "Old", "Red", "Blue", "Yellow", "Green", "Indigo", "Violet", "Young", "Experienced", "Wild", "Evil", "Crazy", "Smart", "Virtuous", "Reckless", "Even-Keeled", "Drunk", "Sober", "Exalted", "Whiny", "Relaxed", "Stressed", "Socially-Distanced", "Mad", "Test",
+            ]
+            var nouns = [
+                "People", "Folks", "Fellows", "Teachers", "Students", "Layabouts", "Puzzle Solvers", "Only Connect Players", "Brainiacs", "Smarties", "Quitters", "Historians", "Musicians", "Cellists", "Pianists", "Wolves", "Foxes", "Pandas", "Koalas", "Penguins", "Hatters", "Mice", "Cats", "Dogs", "Panthers", "Cobras", "Doctors", "Philosophers", "Cinephiles", "Footballers", "Baseball Fans", "Rocks", "Boulders", "Climbers", "Trees", "Plants", "Gardeners", "Bees",
+            ]
+
+            return sample(adjectives) + " " + sample(nouns)
+        }
+        var team_name_h1 = document.getElementById("team_name")
+        team_name_h1.textContent = make_name()
+
+        document.getElementById("again").addEventListener("click", function() { team_name_h1.textContent = make_name() })
+    </script>
+</html>
