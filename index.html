@@ -34,6 +34,9 @@
         var team_name_h1 = document.getElementById("team_name")
         team_name_h1.textContent = make_name()
 
-        document.getElementById("again").addEventListener("click", function() { team_name_h1.textContent = make_name() })
+        document.getElementById("again").addEventListener("click", function(e) {
+            team_name_h1.textContent = make_name()
+            e.preventDefault()
+        })
     </script>
 </html>
